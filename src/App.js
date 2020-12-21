@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { Fragment } from 'react'
 import './App.css';
+import { BrowserRouter, Switch, Route, NavLink, Redirect } from 'react-router-dom'
+
+import Science from './Pages/Science/Science'
+import Business from './Pages/Business/Business'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <nav>
+      <ul>
+        <li>
+          <NavLink to="/science/">Science</NavLink>
+        </li>
+        <li>
+          <NavLink to="/business/">Business</NavLink>
+        </li>
+      </ul>
+    </nav>
+
+    <Switch>
+
+      <Redirect from="/home" to="/science" exact/>
+      <Route path="/science/:page?" component={Science} exact />
+      <Route path="/business/:page?" component={Business} exact />
+
+    </Switch>
+    </Fragment>
   );
 }
 

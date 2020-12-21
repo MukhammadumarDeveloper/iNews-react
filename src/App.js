@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import './App.css';
-import { BrowserRouter, Switch, Route, NavLink, Redirect } from 'react-router-dom'
+import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
 
 import Science from './Pages/Science/Science'
 import Business from './Pages/Business/Business'
